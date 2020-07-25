@@ -11,6 +11,8 @@ import {
     RowForm
 } from './styles';
 
+import api from '../../services/api';
+
 function RegisterProject () {
 
     const [name, setName] = useState('');
@@ -35,7 +37,7 @@ function RegisterProject () {
         }
 
         try {
-            // await api.post('projects', data);
+            await api.post('projects', data);
 
             history.push('/');
         } catch (error) {
